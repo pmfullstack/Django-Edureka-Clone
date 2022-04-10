@@ -1,0 +1,72 @@
+{% load static %}
+<html>
+    <style>
+        @page{
+        size: a4 landscape;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 1000pt; top: 50pt; height: 400pt; background:red;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 10pt; width: 820pt; top: 10pt; height: 1100pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+        }
+        .outer-border {
+    width: 700px;
+    height: 900px;
+    padding: 20px;
+    text-align: center;
+    border: 10px solid #673AB7;
+    margin-left: 21%
+}
+
+.inner-dotted-border {
+    width: 750px;
+    height: 600px;
+    padding: 20px;
+    margin-top: 500px;
+    text-align: center;
+    border: 5px solid #673AB7;
+    border-style: dotted
+}
+
+.certification {
+    margin-top: 500px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #663ab7
+}
+
+.certify {
+    font-size: 25px
+}
+
+.name {
+    font-size: 30px;
+    color: green
+}
+
+.fs-30 {
+    font-size: 30px
+}
+
+.fs-20 {
+    font-size: 20px
+}
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <body>
+
+        
+        <div class="outer-border">
+            <div class="inner-dotted-border"> <a class="navbar-brand" style="font-size: 66px; text-transform: none; text-decoration: none;">Education Hub</a><br><br><br><br> <span class="certification" id="header_content">Certificate of Completion</span> <br><br><br><br><br><br><br><br><br><br> <span class="certify"><i>This is to certify that</i></span> <br><br> <span class="name"><b>"{{customerName | title}} {{customerNamelast | title}}"</b></span><br /><br /> <span class="certify"><i>has successfully completed the certification</i></span> <br /><br /> <span class="fs-30">{{posts.title}} Course</span> <br /><br /> <span class="fs-20">with score of <b>A+</b></span><br><br><br><br><br><br><br><br><br><br><br><br> <span class="certify"><i>Regards</i></span><br> <span class="fs-30">Education Hub</span>
+            </div>
+        </div>
+    </body>
+</html>
